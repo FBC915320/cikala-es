@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada | CIKALA International</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://cikala.es/">
+<link rel="icon" href="cikala-logo-real.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#E8631A;
+  --dred:#C4500F;
+  --navy:#14213d;
+  --border:#e2e8f0;
+  --text:#253044;
+  --muted:#687386;
+  --light:#f6f7f9;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;line-height:1.65;font-size:15px}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1140px;margin:0 auto;padding:0 48px}
+@media(max-width:900px){.wrap{padding:0 32px}}
+@media(max-width:560px){.wrap{padding:0 20px}}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.header-inner{max-width:1140px;margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo img{height:32px;flex-shrink:0}
+@media(max-width:900px){.header-inner{padding:0 32px}}
+@media(max-width:560px){.header-inner{padding:0 20px}}
+
+/* ── SHARED ── */
+.lbl{font-size:.6rem;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.btn-red{display:inline-flex;align-items:center;background:var(--red);color:#fff;padding:12px 26px;border-radius:6px;font-size:.9rem;font-weight:800;transition:background .15s}
+.btn-red:hover{background:var(--dred)}
+.sec{padding:40px 0}
+
+/* ── 404 ── */
+.notfound{min-height:calc(100vh - 56px - 110px);display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 56px}
+.notfound-code{font-size:clamp(3.5rem,10vw,6rem);font-weight:900;color:var(--navy);letter-spacing:-2px;line-height:1}
+.notfound h1{font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:900;color:var(--navy);margin:14px 0 12px}
+.notfound p{font-size:.92rem;color:var(--muted);line-height:1.7;max-width:480px;margin:0 auto 28px}
+
+/* ── FOOTER ── */
+footer{background:#0d1726;padding:12px 0 10px}
+.footer-inner{max-width:1140px;margin:0 auto;padding:0 48px;display:flex;gap:48px;flex-wrap:wrap;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand{font-size:1.25rem;font-weight:900;color:#fff;letter-spacing:1px;margin-bottom:7px}
+.footer-info{font-size:.76rem;color:rgba(255,255,255,.36);line-height:1.85}
+.footer-info a{color:rgba(255,255,255,.46)}
+.footer-copy{max-width:1140px;margin:8px auto 0;padding:0 48px;font-size:.68rem;color:rgba(255,255,255,.18)}
+@media(max-width:900px){.footer-inner{padding:0 32px 18px}.footer-copy{padding:0 32px}}
+@media(max-width:480px){footer{padding:24px 0 18px}.footer-inner{flex-direction:column;gap:16px;padding:0 20px 18px}.footer-copy{padding:0 20px}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="cikala-logo-real.png" alt="CIKALA"></a>
+  </div>
+</header>
+
+<!-- 404 -->
+<section class="notfound">
+  <div class="wrap">
+    <div class="notfound-code">404</div>
+    <div class="lbl" style="justify-content:center;display:flex">Página no encontrada</div>
+    <h1>Lo sentimos, esta página no existe</h1>
+    <p>El enlace que seguiste puede estar desactualizado o la página fue movida. Volvé a la página principal de CIKALA.</p>
+    <a class="btn-red" href="/">Volver al inicio</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">CIKALA</div>
+      <p class="footer-info">
+        Brasil: Rua Quarunás, 320 — Penha — São Paulo / SP
+      </p>
+    </div>
+    <div>
+      <p class="footer-info">
+        <a href="mailto:internacional@cikala.com.br">internacional@cikala.com.br</a>
+      </p>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 CIKALA. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
