@@ -32,7 +32,7 @@
   gtag('config', 'G-X111VX6FLY');
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"CIKALA","url":"https://cikala.es","logo":"https://cikala.es/cikala-logo-real.png","description":"CIKALA es el canal internacional B2B de soluciones técnicas industriales fabricadas en Brasil. Lonas, tejidos técnicos, fundas a medida y proyectos para distribuidores, importadores y empresas en España, América Latina y Europa.","email":"internacional@cikala.com.br","areaServed":["ES","AR","CL","UY","PY","PT","EU","LATAM"],"knowsAbout":["lonas técnicas","capas industriales","geomembrana","tejidos para kimonos","cortinas PVC","shade sail","tatames","exportación Brasil","soluciones industriales B2B"],"sameAs":["https://www.cikala.com.br"],"contactPoint":{"@type":"ContactPoint","email":"internacional@cikala.com.br","contactType":"sales","availableLanguage":["Spanish"]}}
+{"@context":"https://schema.org","@type":"Organization","name":"CIKALA","url":"https://cikala.es","logo":"https://cikala.es/cikala-logo-real.png","description":"CIKALA es el canal internacional B2B de soluciones técnicas industriales fabricadas en Brasil. Lonas, tejidos técnicos, fundas a medida y proyectos para distribuidores, importadores y empresas en España, América Latina y Europa.","areaServed":["ES","AR","CL","UY","PY","PT","EU","LATAM"],"knowsAbout":["lonas técnicas","capas industriales","geomembrana","tejidos para kimonos","cortinas PVC","shade sail","tatames","exportación Brasil","soluciones industriales B2B"],"sameAs":["https://www.cikala.com.br"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","availableLanguage":["Spanish"]}}
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -215,7 +215,7 @@ h2.sec-title{font-size:clamp(1.25rem,2vw,1.55rem);font-weight:900;color:var(--na
 
 /* ── CONTATO ── */
 .contact-wrap{background:var(--navy);padding:52px 0}
-.contact-inner{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.contact-inner{display:grid;grid-template-columns:1fr minmax(320px,460px);gap:48px;align-items:start}
 .contact-lbl{font-size:.6rem;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px}
 .contact-inner h2{font-size:clamp(1.2rem,2.4vw,1.5rem);font-weight:900;color:#fff;line-height:1.18;margin-bottom:12px}
 .contact-inner p{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:580px}
@@ -227,13 +227,18 @@ h2.sec-title{font-size:clamp(1.25rem,2vw,1.55rem);font-weight:900;color:var(--na
 @media(max-width:480px){.contact-wrap{padding:36px 0}}
 
 /* ── CTA WHATSAPP ── */
-.contact-cta{text-align:center;width:100%}
+.contact-cta{width:100%}
 .contact-cta-hint{color:rgba(255,255,255,.55);font-size:.85rem;line-height:1.7;margin-bottom:22px;max-width:480px;margin-left:auto;margin-right:auto}
 .btn-whatsapp{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:12px 26px;border-radius:6px;font-size:.9rem;font-weight:800;text-decoration:none;transition:background .15s}
 .btn-whatsapp svg{width:18px;height:18px;flex-shrink:0}
 .btn-whatsapp:hover{background:#1fb958}
 .contact-cta-number{color:rgba(255,255,255,.4);font-size:.78rem;font-weight:500;margin-top:12px;letter-spacing:.2px}
 @media(max-width:480px){.btn-whatsapp{width:100%;justify-content:center;padding:14px 20px}}
+.contact-form{background:#fff;border-radius:10px;padding:22px;color:var(--text);box-shadow:0 8px 28px rgba(0,0,0,.14)}
+.contact-form h2{color:var(--navy);font-size:1.18rem;margin-bottom:16px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-field{display:flex;flex-direction:column;gap:5px}.form-field.full{grid-column:1/-1}.form-field label{font-size:.75rem;font-weight:800;color:var(--navy)}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:10px 11px;font:inherit;font-size:.84rem;color:var(--text);background:#fff}.form-field textarea{min-height:105px;resize:vertical}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:3px solid rgba(232,99,26,.18);border-color:var(--red)}
+.form-submit{border:0;cursor:pointer;margin-top:14px;width:100%;justify-content:center;font-family:inherit}.form-status{font-size:.78rem;margin-top:10px;min-height:1.3em}.form-status.success{color:#137333}.form-status.error{color:#b3261e}.form-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:760px){.contact-inner{grid-template-columns:1fr}.contact-cta{text-align:center}.contact-form{text-align:left}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
 
 /* ── BOTÃO FIXO (FAB) ── */
 .fab-cta{position:fixed;bottom:24px;right:24px;z-index:150;background:var(--red);color:#fff;padding:13px 24px;border-radius:50px;font-size:.82rem;font-weight:800;box-shadow:0 4px 20px rgba(232,99,26,.4);transition:background .15s,transform .15s,box-shadow .15s;white-space:nowrap;display:flex;align-items:center}
@@ -733,18 +738,33 @@ footer{background:#0d1726;padding:12px 0 10px}
       <div>
         <p class="contact-lbl" data-i18n="contato.label">Contacto</p>
         <h2 data-i18n="contato.h2">¿Quiere vender, comprar o desarrollar productos entre Brasil, España y Europa?</h2>
-        <p data-i18n="contato.p">Envíe su producto, segmento, país de destino, volumen estimado y objetivo comercial. CIKALA evalúa la viabilidad e indica el próximo paso.</p>
+        <p data-i18n="contato.p">Envíe su producto, segmento, país de destino y objetivo comercial. CIKALA evalúa la viabilidad e indica el próximo paso.</p>
         <p class="contact-checklist-lbl" data-i18n="contato.checklist.lbl">Incluya en su mensaje:</p>
         <ul class="contact-checklist">
           <li data-i18n="contato.li1">Producto o segmento</li>
           <li data-i18n="contato.li2">País de origen y destino</li>
-          <li data-i18n="contato.li3">Volumen estimado</li>
-          <li data-i18n="contato.li4">Objetivo comercial</li>
-          <li data-i18n="contato.li5">Sitio web, catálogo o fotos, si tiene</li>
+          <li data-i18n="contato.li3">Objetivo comercial</li>
+          <li data-i18n="contato.li4">Sitio web, catálogo o fotos, si tiene</li>
         </ul>
       </div>
       <div class="contact-cta">
-        <p class="contact-cta-hint">Para agilizar la atención, informe en su mensaje: país, empresa, producto de interés, aplicación y volumen estimado.</p>
+        <form class="contact-form" id="contact-form" method="POST" data-formspree-endpoint="FORMSPREE_CIKALA_ES" novalidate>
+          <h2>Contáctenos</h2>
+          <input type="hidden" name="_subject" value="Nuevo contacto desde CIKALA.es">
+          <input type="hidden" name="source" value="cikala.es">
+          <input type="text" name="_gotcha" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-grid">
+            <div class="form-field"><label for="contact-name">Nombre *</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="form-field"><label for="contact-company">Empresa</label><input id="contact-company" name="company" type="text" autocomplete="organization"></div>
+            <div class="form-field"><label for="contact-country">País</label><input id="contact-country" name="country" type="text" autocomplete="country-name"></div>
+            <div class="form-field"><label for="contact-email">Correo electrónico *</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="form-field full"><label for="contact-interest">Interés *</label><select id="contact-interest" name="interest" required><option value="" selected disabled>Seleccione una opción</option><option>Productos</option><option>Consultoría</option><option>Colaboración</option></select></div>
+            <div class="form-field full"><label for="contact-message">Mensaje *</label><textarea id="contact-message" name="message" required></textarea></div>
+          </div>
+          <button class="btn-red form-submit" type="submit">Enviar mensaje</button>
+          <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="contact-cta-hint">También puede hablar con nosotros por WhatsApp.</p>
         <a class="btn-whatsapp" href="https://wa.me/5511987781343?text=Hola,%20soy%20de%20[pa%C3%ADs]%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20internacional%20de%20productos%20t%C3%A9cnicos%20CIKALA.%20Mi%20empresa%20es%20[empresa],%20el%20producto%20de%20inter%C3%A9s%20es%20[producto],%20la%20aplicaci%C3%B3n%20es%20[uso]%20y%20el%20volumen%20estimado%20es%20[cantidad].%20Origen:%20cikala.es" target="_blank" onclick="gtag('event','click_whatsapp_internacional',{origin:'cikala.es'})">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.847 9.847 0 0 0 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.55-1.16-2.95 0-1.4.73-2.09 1-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
           <span>Hablar por WhatsApp</span>
@@ -762,11 +782,6 @@ footer{background:#0d1726;padding:12px 0 10px}
       <div class="footer-brand">CIKALA</div>
       <p class="footer-info">
         Brasil: Rua Quarunás, 320 — Penha — São Paulo / SP
-      </p>
-    </div>
-    <div>
-      <p class="footer-info">
-        <a href="mailto:internacional@cikala.com.br" onclick="gtag('event','click_email_internacional',{origin:'footer'})">internacional@cikala.com.br</a>
       </p>
     </div>
   </div>
@@ -911,13 +926,12 @@ var TEXTS = {
     'prod.note':'Algunas líneas específicas — fundas para piscina, tejidos para kimonos, fundas robóticas y otros artículos técnicos — pueden evaluarse como oportunidades en validación, según producto, aplicación y volumen.',
     'contato.label':'Contacto',
     'contato.h2':'¿Quiere vender, encontrar o desarrollar productos entre Brasil, España y Europa? ¿O necesita productos CIKALA?',
-    'contato.p':'Envíe su producto, segmento, país de destino, volumen estimado y objetivo comercial. CIKALA evalúa la viabilidad e indica el próximo paso.',
+    'contato.p':'Envíe su producto, segmento, país de destino y objetivo comercial. CIKALA evalúa la viabilidad e indica el próximo paso.',
     'contato.checklist.lbl':'Incluya en su mensaje:',
     'contato.li1':'Producto o segmento',
     'contato.li2':'País de origen y destino',
-    'contato.li3':'Volumen estimado',
-    'contato.li4':'Objetivo comercial',
-    'contato.li5':'Sitio web, catálogo o fotos, si tiene',
+    'contato.li3':'Objetivo comercial',
+    'contato.li4':'Sitio web, catálogo o fotos, si tiene',
     'contato.btn':'Hablar con CIKALA →'
   },
   pt: {
@@ -1040,13 +1054,12 @@ var TEXTS = {
     'prod.note':'Algumas linhas específicas — capas para piscina, tecidos para kimonos, capas robóticas e outros itens técnicos — podem ser avaliadas como oportunidades em validação, conforme produto, aplicação e volume.',
     'contato.label':'Contato',
     'contato.h2':'Quer vender, encontrar ou desenvolver produtos entre Brasil, Espanha e Europa? Ou precisa de produtos CIKALA?',
-    'contato.p':'Envie seu produto, segmento, país de destino, volume estimado e objetivo comercial. A CIKALA avalia a viabilidade e indica o próximo passo.',
+    'contato.p':'Envie seu produto, segmento, país de destino e objetivo comercial. A CIKALA avalia a viabilidade e indica o próximo passo.',
     'contato.checklist.lbl':'Inclua na sua mensagem:',
     'contato.li1':'Produto ou segmento',
     'contato.li2':'País de origem e destino',
-    'contato.li3':'Volume estimado',
-    'contato.li4':'Objetivo comercial',
-    'contato.li5':'Site, catálogo ou fotos, se tiver',
+    'contato.li3':'Objetivo comercial',
+    'contato.li4':'Site, catálogo ou fotos, se tiver',
     'contato.btn':'Fale com a CIKALA →'
   },
   en: {
@@ -1169,13 +1182,12 @@ var TEXTS = {
     'prod.note':'Some specific lines — swimming pool covers, kimono fabrics, robotic covers and other technical items — may be evaluated as opportunities under validation, according to product, application and volume.',
     'contato.label':'Contact',
     'contato.h2':'Want to sell, source or develop products between Brazil, Spain and Europe? Or need CIKALA products?',
-    'contato.p':'Send your product, segment, destination country, estimated volume and commercial objective. CIKALA evaluates the viability and indicates the next step.',
+    'contato.p':'Send your product, segment, destination country and commercial objective. CIKALA evaluates the viability and indicates the next step.',
     'contato.checklist.lbl':'Include in your message:',
     'contato.li1':'Product or segment',
     'contato.li2':'Country of origin and destination',
-    'contato.li3':'Estimated volume',
-    'contato.li4':'Commercial objective',
-    'contato.li5':'Website, catalogue or photos, if available',
+    'contato.li3':'Commercial objective',
+    'contato.li4':'Website, catalogue or photos, if available',
     'contato.btn':'Contact CIKALA →'
   }
 };
@@ -1540,6 +1552,31 @@ function closeModal() {
 }
 
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+(function() {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var status = document.getElementById('contact-form-status');
+  var endpoint = form.dataset.formspreeEndpoint;
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    status.className = 'form-status';
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (!endpoint || endpoint.indexOf('FORMSPREE_') === 0) {
+      status.className = 'form-status error';
+      status.textContent = 'El formulario está siendo configurado. Por favor, utilice WhatsApp.';
+      return;
+    }
+    var interest = form.querySelector('[name="interest"]').value;
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true; button.textContent = 'Enviando...';
+    fetch(endpoint, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+      .then(function(response) { if (!response.ok) throw new Error('form_error'); return response.json(); })
+      .then(function() { status.className = 'form-status success'; status.textContent = 'Mensaje enviado. Gracias por contactarnos.'; form.reset(); if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contacto_cikala_es', site:'cikala.es', interest:interest}); })
+      .catch(function() { status.className = 'form-status error'; status.textContent = 'No fue posible enviar el mensaje. Inténtelo de nuevo o use WhatsApp.'; })
+      .finally(function() { button.disabled = false; button.textContent = 'Enviar mensaje'; });
+  });
+})();
 
 (function() {
   var stored = null;
