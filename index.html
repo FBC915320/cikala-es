@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 34041)
+Total output lines: 1612
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -748,10 +751,11 @@ footer{background:#0d1726;padding:12px 0 10px}
         </ul>
       </div>
       <div class="contact-cta">
-        <form class="contact-form" id="contact-form" method="POST" data-formspree-endpoint="FORMSPREE_CIKALA_ES" novalidate>
+        <form class="contact-form" id="contact-form" method="POST" action="GOOGLE_APPS_SCRIPT_WEB_APP_URL" target="contact-form-frame" novalidate>
           <h2>Contáctenos</h2>
           <input type="hidden" name="_subject" value="Nuevo contacto desde CIKALA.es">
-          <input type="hidden" name="source" value="cikala.es">
+          <input type="hidden" name="site" value="cikala.es">
+          <input type="hidden" name="response" value="postmessage">
           <input type="text" name="_gotcha" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-grid">
             <div class="form-field"><label for="contact-name">Nombre *</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div>
@@ -764,6 +768,7 @@ footer{background:#0d1726;padding:12px 0 10px}
           <button class="btn-red form-submit" type="submit">Enviar mensaje</button>
           <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
         </form>
+        <iframe name="contact-form-frame" title="Estado do envio do formulário" hidden></iframe>
         <p class="contact-cta-hint">También puede hablar con nosotros por WhatsApp.</p>
         <a class="btn-whatsapp" href="https://wa.me/5511987781343?text=Hola,%20soy%20de%20[pa%C3%ADs]%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20internacional%20de%20productos%20t%C3%A9cnicos%20CIKALA.%20Mi%20empresa%20es%20[empresa],%20el%20producto%20de%20inter%C3%A9s%20es%20[producto],%20la%20aplicaci%C3%B3n%20es%20[uso]%20y%20el%20volumen%20estimado%20es%20[cantidad].%20Origen:%20cikala.es" target="_blank" onclick="gtag('event','click_whatsapp_internacional',{origin:'cikala.es'})">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.847 9.847 0 0 0 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.55-1.16-2.95 0-1.4.73-2.09 1-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.47.21.54.33.07.12.07.68-.17 1.36Z"/></svg>
@@ -828,194 +833,7 @@ var TEXTS = {
     'ponte.bloco2.h3':'Identificación de fabricantes, proveedores y soluciones técnicas en Brasil.',
     'ponte.bloco2.p':'Para empresas españolas o europeas que necesitan encontrar productos, fabricantes o soluciones técnicas en Brasil, CIKALA puede identificar posibilidades, evaluar proveedores y apoyar el desarrollo de la oportunidad.',
     'exporte.label':'Exporte a España',
-    'exporte.title':'Amplíe su mercado entre Brasil, España y Europa.',
-    'exporte.lead':'CIKALA apoya a empresas brasileñas que desean divulgar, vender y evaluar oportunidades comerciales en España y Europa, conectando producto, canal de venta, logística, viabilidad y socios comerciales.',
-    'exporte.li1':'Divulgar productos en España',
-    'exporte.li2':'Buscar socios comerciales',
-    'exporte.li3':'Evaluar canales de venta',
-    'exporte.li4':'Estructurar presencia B2B',
-    'exporte.li5':'Importar, exportar o representar productos',
-    'exporte.btn':'Quiero evaluar mi producto →',
-    'exporte.hint':'Envíe su producto, segmento y objetivo comercial. CIKALA evalúa el camino más viable.',
-    'como.label':'Cómo evaluamos cada demanda',
-    'como.title':'Cada proyecto es analizado según aplicación, medidas, volumen, requisitos técnicos y viabilidad real.',
-    'como.s1.h3':'Entendemos la aplicación',
-    'como.s1.p':'Aplicación, medidas, volumen estimado, país de destino y objetivo comercial.',
-    'como.s2.h3':'Evaluamos producto y proveedor',
-    'como.s2.p':'Producto, fabricante, capacidad, requisitos técnicos y documentación necesaria.',
-    'como.s3.h3':'Analizamos la viabilidad',
-    'como.s3.p':'Viabilidad comercial, canal, volumen mínimo y plazo de desarrollo.',
-    'como.s4.h3':'Indicamos el próximo paso',
-    'como.s4.p':'Propuesta de enfoque, muestra, alianza o derivación según el caso.',
-    'oq.label':'Qué hacemos',
-    'oq.title':'Desarrollo, adaptación, suministro y conexión comercial de productos técnicos.',
-    'oq.lead':'Actuamos en el desarrollo, adaptación, suministro y conexión comercial de productos técnicos y soluciones a medida para empresas.',
-    'card.lonas.h3':'Lonas técnicas y coberturas',
-    'card.lonas.p':'PE, PVC, algodón técnico, geomembranas y materiales especiales para transporte, obra, agricultura, piscina e industria.',
-    'card.lonas.hint':'+ Ver materiales y aplicaciones',
-    'card.capas.h3':'Fundas industriales a medida',
-    'card.capas.p':'Fundas para máquinas, equipos y áreas productivas que exigen protección, resistencia y acabado técnico.',
-    'card.capas.hint':'+ Ver materiales y aplicaciones',
-    'card.piscina.h3':'Fundas para piscinas CIKALA — CK300 a CK550',
-    'card.piscina.p':'Lonas impermeables a medida para piscinas residenciales y comerciales. PVC y polietileno 300–550 micras, con ojales reforzados. Sin geomembrana.',
-    'card.piscina.hint':'+ Ver modelos y colores',
-    'card.lavanderia.h3':'Fundas y bolsas para lavandería',
-    'card.lavanderia.p':'Para lavanderías, hospitales, clínicas y hoteles. Separación, transporte e identificación de materiales limpios o contaminados.',
-    'card.lavanderia.hint':'+ Ver materiales y aplicaciones',
-    'card.cortinas.h3':'Cortinas y cerramientos industriales',
-    'card.cortinas.p':'PVC cristal, opaco y antiestático para cerramientos de ambientes, cabinas, tanques y áreas de producción. A medida por vano y altura.',
-    'card.cortinas.hint':'+ Ver materiales y aplicaciones',
-    'card.tecidos.h3':'Tejidos técnicos para kimonos y uniformes',
-    'card.tecidos.p':'Rip stop, sarga 3x1, trenzado y lona para fabricantes de kimonos y uniformes de artes marciales. Suministro B2B en rollos desde Brasil.',
-    'card.tecidos.hint':'+ Ver tipos, colores y gramajes',
-    'card.tatames.h3':'Lonas y tatamis — CK600, CK1000 y EVA',
-    'card.tatames.p':'PVC 600 y 1000 micras más EVA foam para academias de judo, jiu-jitsu y MMA. A medida, varios colores.',
-    'card.tatames.hint':'+ Ver modelos y colores',
-    'card.capasmaquinas.h3':'Fundas para máquinas y equipos',
-    'card.capasmaquinas.p':'PVC impermeable, a medida, para máquinas industriales, equipos médicos, plotters y motores. Protección total, fabricada por proyecto.',
-    'card.capasmaquinas.hint':'+ Ver proyectos especiales',
-    'card.capaspalete.h3':'Fundas para palés',
-    'card.capaspalete.p':'12 modelos: impermeable, visor cristal, retardante de llama FR, UV Shield e industrial 650 Pro. PVC a medida para almacén, logística e industria.',
-    'card.capaspalete.hint':'+ Ver línea completa 2026',
-    'card.geomembrana.h3':'Geomembrana PVC — impermeabilización',
-    'card.geomembrana.p':'PVC 500 y 1000 micras para lagos, tanques y reservorios. Flexible, atóxica y de fácil instalación.',
-    'card.geomembrana.hint':'+ Ver espesores y aplicaciones',
-    'card.lona_encerada.h3':'Encerado Hilo 8 — rollo y confeccionado',
-    'card.lona_encerada.p':'Lona gruesa impermeabilizada Hilo 8 en rollo (por metro) y confeccionada para camión. Colores caqui y verde. Uso en transporte, obras y exterior.',
-    'card.lona_encerada.hint':'+ Ver especificaciones y colores',
-    'card.toldos.h3':'Lona para Toldos — PVC y náutica',
-    'card.toldos.p':'Líneas DF, FL, Lowick translúcida y náutica. Para terrazas, pérgolas y fachadas — muy usada en España y Europa.',
-    'card.toldos.hint':'+ Ver líneas y colores',
-    'card.shadesail.h3':'Shade Sail — vela de sombra UV 90%',
-    'card.shadesail.p':'Poliéster 100%, resistente a la lluvia y UV. Argolas en las esquinas para fijar. Color arena. Para pérgolas, piscinas, garajes y exteriores.',
-    'card.shadesail.hint':'+ Ver tamaños y modelos',
-    'card.telashade.h3':'Tela Shade 90% Sombreado',
-    'card.telashade.p':'Polietileno UV antifúngico con 90% de sombreado y circulación de aire. +80 tamaños, kit de instalación incluido.',
-    'card.telashade.hint':'+ Ver tamaños y especificaciones',
-    'card.cabo_aco.h3':'Cable de Acero revestido y galvanizado',
-    'card.cabo_aco.p':'Cables PVC coloreados y galvanizados para poleas, seguridad y estructuras. 1,6 mm a 6 mm, hasta 600 kg.',
-    'card.cabo_aco.hint':'+ Ver diámetros y accesorios',
-    'card.cintas.h3':'Cintas de Amarre — 3 y 5 toneladas',
-    'card.cintas.p':'Poliéster de alta tenacidad con gancho J y trinquete. 3 y 5 ton. Para camiones, logística y normas EN europeas.',
-    'card.cintas.hint':'+ Ver modelos y capacidades',
-    'card.cortina_solda.h3':'Cortina de Soldadura PVC CK600',
-    'card.cortina_solda.p':'600 micras para protección MIG/TIG: bloquea salpicaduras, UV y calor. Varios colores, vendida por metro.',
-    'card.cortina_solda.hint':'+ Ver especificaciones y colores',
-    'card.lona_eventos.h3':'Lona para Eventos y Carpas',
-    'card.lona_eventos.p':'TD1000 Blackout antichama, Lowick translúcida y G320. Para carpas, escenarios, ferias y estructuras temporales.',
-    'card.lona_eventos.hint':'+ Ver líneas y colores',
-    'card.rolo_bobina.h3':'Funda para Rollo y Bobina Industrial',
-    'card.rolo_bobina.p':'Protección impermeable anti-UV a medida para rollos y bobinas industriales de gran porte. Sin herramientas, fabricada por proyecto y dimensión.',
-    'card.rolo_bobina.hint':'+ Ver proyectos y aplicaciones',
-    'card.caixa_dagua.h3':'Funda para Depósito de Agua',
-    'card.caixa_dagua.p':'PVC antifúngico atóxico para 250 L a 15.000 L. Redondo, cuadrado, rectangular y en forma de judía.',
-    'card.caixa_dagua.hint':'+ Ver modelos y capacidades',
-    'card.lona_cobertura.h3':'Lona para Cobertura — CK300 a TD1000',
-    'card.lona_cobertura.p':'Polietileno y PVC para obras, almacenes, tendas y cargas. CK300, CK400, G320, TD1000 antichama y Tipo Capota.',
-    'card.lona_cobertura.hint':'+ Ver líneas y espesores',
-    'prod.divider':'Productos y Soluciones CIKALA',
-    'prod.label':'Productos y líneas de actuación',
-    'prod.title':'Líneas técnicas consolidadas en Brasil, evaluadas según mercado y viabilidad.',
-    'prod.p':'CIKALA trabaja con líneas técnicas consolidadas en Brasil y evalúa oportunidades específicas según mercado, volumen y viabilidad.',
-    'prod.li1':'lonas técnicas — PE y PVC',
-    'prod.li2':'coberturas y fundas industriales',
-    'prod.li3':'fundas para palés, estanterías, máquinas y equipos',
-    'prod.li4':'tejidos técnicos y materiales en bobina',
-    'prod.li5':'piezas confeccionadas a medida',
-    'prod.li6':'soluciones para industria, logística, almacenaje, transporte y agricultura',
-    'prod.note':'Algunas líneas específicas — fundas para piscina, tejidos para kimonos, fundas robóticas y otros artículos técnicos — pueden evaluarse como oportunidades en validación, según producto, aplicación y volumen.',
-    'contato.label':'Contacto',
-    'contato.h2':'¿Quiere vender, encontrar o desarrollar productos entre Brasil, España y Europa? ¿O necesita productos CIKALA?',
-    'contato.p':'Envíe su producto, segmento, país de destino y objetivo comercial. CIKALA evalúa la viabilidad e indica el próximo paso.',
-    'contato.checklist.lbl':'Incluya en su mensaje:',
-    'contato.li1':'Producto o segmento',
-    'contato.li2':'País de origen y destino',
-    'contato.li3':'Objetivo comercial',
-    'contato.li4':'Sitio web, catálogo o fotos, si tiene',
-    'contato.btn':'Hablar con CIKALA →'
-  },
-  pt: {
-    'header.cta':'Fale com a CIKALA',
-    'hero.label':'Brasil · Espanha · Europa · B2B',
-    'hero.h1':'CIKALA — soluções técnicas e desenvolvimento B2B entre Brasil e Europa.',
-    'hero.sub':'A CIKALA conecta produtos técnicos, fabricação, confecção industrial e oportunidades comerciais entre Brasil, Espanha e Europa.',
-    'hero.btn':'Fale com a CIKALA',
-    'b2b.h3':'Sua empresa quer entrar no Brasil ou na Europa?',
-    'b2b.p':'A CIKALA avalia produto, segmento, canal e viabilidade comercial. Identificamos fornecedores, parceiros e caminhos reais — caso a caso, sem promessa vaga.',
-    'b2b.btn':'Falar com a CIKALA →',
-    'digital.h3':'Venda mais com presença digital B2B',
-    'digital.p':'Landing pages, catálogos técnicos e gestão de presença B2B para captar compradores e distribuidores industriais na Espanha, Brasil e Europa.',
-    'digital.btn':'Ver como funciona →',
-    'ponte.label':'Brasil ↔ Espanha / Europa',
-    'ponte.title':'A CIKALA atua nos dois sentidos da ponte comercial.',
-    'ponte.lead':'O trabalho é feito caso a caso, conforme aplicação, requisitos técnicos, volume, documentação e objetivo comercial.',
-    'ponte.bloco1.label':'Quer vender no Brasil?',
-    'ponte.bloco1.h3':'Apoio para empresas europeias que querem entrar no mercado brasileiro.',
-    'ponte.bloco1.p':'Para empresas da Espanha ou da Europa que desejam vender no Brasil, a CIKALA pode apoiar a avaliação do produto, aplicação, canal, adaptação comercial e viabilidade.',
-    'ponte.bloco2.label':'Precisa encontrar produtos brasileiros?',
-    'ponte.bloco2.h3':'Identificação de fabricantes, fornecedores e soluções técnicas no Brasil.',
-    'ponte.bloco2.p':'Para empresas espanholas ou europeias que precisam encontrar produtos, fabricantes ou soluções técnicas no Brasil, a CIKALA pode identificar possibilidades, avaliar fornecedores e apoiar o desenvolvimento da oportunidade.',
-    'exporte.label':'Exporte para Espanha',
-    'exporte.title':'Amplie seu mercado entre Brasil, Espanha e Europa.',
-    'exporte.lead':'A CIKALA apoia empresas brasileiras que desejam divulgar, vender e avaliar oportunidades comerciais na Espanha e Europa, conectando produto, canal de venda, logística, viabilidade e parceiros comerciais.',
-    'exporte.li1':'Divulgar produtos na Espanha',
-    'exporte.li2':'Buscar parceiros comerciais',
-    'exporte.li3':'Avaliar canais de venda',
-    'exporte.li4':'Estruturar presença B2B',
-    'exporte.li5':'Importar, exportar ou representar produtos',
-    'exporte.btn':'Quero avaliar meu produto →',
-    'exporte.hint':'Envie seu produto, segmento e objetivo comercial. A CIKALA avalia o caminho mais viável.',
-    'como.label':'Como avaliamos cada demanda',
-    'como.title':'Cada projeto é analisado conforme aplicação, medidas, volume, requisitos técnicos e viabilidade real.',
-    'como.s1.h3':'Entendemos a aplicação',
-    'como.s1.p':'Aplicação, medidas, volume estimado, país de destino e objetivo comercial.',
-    'como.s2.h3':'Avaliamos produto e fornecedor',
-    'como.s2.p':'Produto, fabricante, capacidade, requisitos técnicos e documentação necessária.',
-    'como.s3.h3':'Analisamos a viabilidade',
-    'como.s3.p':'Viabilidade comercial, canal, volume mínimo e prazo de desenvolvimento.',
-    'como.s4.h3':'Indicamos o próximo passo',
-    'como.s4.p':'Proposta de abordagem, amostra, parceria ou encaminhamento conforme o caso.',
-    'oq.label':'O que fazemos',
-    'oq.title':'Desenvolvimento, adaptação, fornecimento e conexão comercial de produtos técnicos.',
-    'oq.lead':'Atuamos no desenvolvimento, adaptação, fornecimento e conexão comercial de produtos técnicos e soluções sob medida para empresas.',
-    'card.lonas.h3':'Lonas técnicas e coberturas',
-    'card.lonas.p':'PE, PVC, algodão técnico, geomembranas e materiais especiais para transporte, obra, agricultura, piscina e indústria.',
-    'card.lonas.hint':'+ Ver materiais e aplicações',
-    'card.capas.h3':'Capas industriais sob medida',
-    'card.capas.p':'Capas para máquinas, equipamentos e áreas produtivas que exigem proteção, resistência e acabamento técnico.',
-    'card.capas.hint':'+ Ver materiais e aplicações',
-    'card.piscina.h3':'Capas para piscinas CIKALA — CK300 a CK550',
-    'card.piscina.p':'Lonas impermeáveis sob medida para piscinas residenciais e comerciais. PVC e polietileno 300–550 micras, com ilhós reforçados. Sem geomembrana.',
-    'card.piscina.hint':'+ Ver modelos e cores',
-    'card.lavanderia.h3':'Capas e bolsões para lavanderia',
-    'card.lavanderia.p':'Para lavanderias, hospitais, clínicas e hotéis. Separação, transporte e identificação de materiais limpos ou contaminados.',
-    'card.lavanderia.hint':'+ Ver materiais e aplicações',
-    'card.cortinas.h3':'Cortinas e fechamentos industriais',
-    'card.cortinas.p':'PVC cristal, opaco e antiestático para fechamentos de ambientes, cabines, tanques e áreas de produção. Sob medida por vão e altura.',
-    'card.cortinas.hint':'+ Ver materiais e aplicações',
-    'card.tecidos.h3':'Tecidos técnicos para kimonos e uniformes',
-    'card.tecidos.p':'Rip stop, sarja 3x1, trançado e lona para kimono. Fornecimento B2B em rolos direto do Brasil para fabricantes europeus.',
-    'card.tecidos.hint':'+ Ver tipos, cores e gramagens',
-    'card.tatames.h3':'Lonas e tatames — CK600, CK1000 e EVA',
-    'card.tatames.p':'PVC 600 e 1000 micras e EVA foam para academias de judô, jiu-jitsu e MMA. Sob medida, diversas cores.',
-    'card.tatames.hint':'+ Ver modelos e cores',
-    'card.capasmaquinas.h3':'Capas para máquinas e equipamentos',
-    'card.capasmaquinas.p':'PVC impermeável, sob medida, para máquinas industriais, equipamentos médicos, plotters e motores. Proteção total, fabricada por projeto.',
-    'card.capasmaquinas.hint':'+ Ver projetos especiais',
-    'card.capaspalete.h3':'Capas para paletes',
-    'card.capaspalete.p':'12 modelos: impermeável, visor cristal, antichama FR, UV Shield e industrial 650 Pro. PVC sob medida para armazém, logística e indústria.',
-    'card.capaspalete.hint':'+ Ver linha completa 2026',
-    'card.geomembrana.h3':'Geomembrana PVC — impermeabilização',
-    'card.geomembrana.p':'PVC 500 e 1000 micras para lagos, tanques e reservatórios. Flexível, atóxica e de fácil instalação.',
-    'card.geomembrana.hint':'+ Ver espessuras e aplicações',
-    'card.lona_encerada.h3':'Lona Encerada Fio 8 — bobina e confeccionada',
-    'card.lona_encerada.p':'Lona grossa impermeabilizada Fio 8, em bobina (por metro) e confeccionada para caminhão. Cores cáqui e verde. Transporte, obras e uso geral.',
-    'card.lona_encerada.hint':'+ Ver especificações e cores',
-    'card.toldos.h3':'Lona para Toldos — PVC e náutica',
-    'card.toldos.p':'Linhas DF, FL, Lowick translúcida e náutica. Para varandas, pérgolas e fachadas — muito usada na Espanha e Europa.',
-    'card.toldos.hint':'+ Ver linhas e cores',
-    'card.shadesail.h3':'Shade Sail — vela de sombra UV 90%',
-    'card.shadesail.p':'Poliéster 100%, resistente à chuva e UV. Argolas nos cantos para fixação. Cor areia. Para pérgolas, piscinas, garagens e áreas externas.',
+    'exporte.tit…4041 tokens truncated…s, piscinas, garagens e áreas externas.',
     'card.shadesail.hint':'+ Ver tamanhos e modelos',
     'card.telashade.h3':'Tela Shade 90% Sombreamento',
     'card.telashade.p':'Polietileno UV antifúngico com 90% de sombreamento e circulação de ar. +80 tamanhos, kit de instalação incluso.',
@@ -1557,12 +1375,13 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModa
   var form = document.getElementById('contact-form');
   if (!form) return;
   var status = document.getElementById('contact-form-status');
-  var endpoint = form.dataset.formspreeEndpoint;
+  var endpoint = form.getAttribute('action');
+  var responseTimer;
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     status.className = 'form-status';
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (!endpoint || endpoint.indexOf('FORMSPREE_') === 0) {
+    if (!endpoint || endpoint === 'GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
       status.className = 'form-status error';
       status.textContent = 'El formulario está siendo configurado. Por favor, utilice WhatsApp.';
       return;
@@ -1570,11 +1389,29 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModa
     var interest = form.querySelector('[name="interest"]').value;
     var button = form.querySelector('button[type="submit"]');
     button.disabled = true; button.textContent = 'Enviando...';
-    fetch(endpoint, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
-      .then(function(response) { if (!response.ok) throw new Error('form_error'); return response.json(); })
-      .then(function() { status.className = 'form-status success'; status.textContent = 'Mensaje enviado. Gracias por contactarnos.'; form.reset(); if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contacto_cikala_es', site:'cikala.es', interest:interest}); })
-      .catch(function() { status.className = 'form-status error'; status.textContent = 'No fue posible enviar el mensaje. Inténtelo de nuevo o use WhatsApp.'; })
-      .finally(function() { button.disabled = false; button.textContent = 'Enviar mensaje'; });
+    form.dataset.submittedInterest = interest;
+    form.submit();
+    window.clearTimeout(responseTimer);
+    responseTimer = window.setTimeout(function() {
+      button.disabled = false; button.textContent = 'Enviar mensaje';
+      status.className = 'form-status error';
+      status.textContent = 'No fue posible confirmar el envío. Inténtelo de nuevo o use WhatsApp.';
+    }, 15000);
+  });
+  window.addEventListener('message', function(event) {
+    var data = event.data;
+    if (!data || data.type !== 'cikala-contact-response') return;
+    window.clearTimeout(responseTimer);
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = false; button.textContent = 'Enviar mensaje';
+    if (data.ok) {
+      status.className = 'form-status success'; status.textContent = 'Mensaje enviado. Gracias por contactarnos.';
+      var interest = form.dataset.submittedInterest || '';
+      form.reset();
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contacto_cikala_es', site:'cikala.es', interest:interest});
+    } else {
+      status.className = 'form-status error'; status.textContent = data.message || 'No fue posible enviar el mensaje. Inténtelo de nuevo o use WhatsApp.';
+    }
   });
 })();
 
