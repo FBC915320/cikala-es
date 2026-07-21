@@ -1619,8 +1619,7 @@ function contactSuccessMessage() {
   // Approximate location is used only to choose the initial language. No IP or
   // location data is stored or sent with the contact form.
   if (stored || !window.fetch) return;
-  window.addEventListener('load', function() {
-    window.setTimeout(function() {
+  window.setTimeout(function() {
       fetch('https://ipapi.co/json/')
         .then(function(response) { return response.ok ? response.json() : null; })
         .then(function(location) {
@@ -1634,8 +1633,7 @@ function contactSuccessMessage() {
           setLang(language);
         })
         .catch(function() {});
-    }, 0);
-  });
+  }, 0);
 })();
 </script>
 </body>
