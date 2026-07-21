@@ -1,5 +1,5 @@
-Warning: truncated output (original token count: 33496)
-Total output lines: 1599
+Warning: truncated output (original token count: 33570)
+Total output lines: 1607
 
 <!DOCTYPE html>
 <html lang="es">
@@ -847,11 +847,7 @@ var TEXTS = {
     'card.lonas.hint':'+ Ver materiales y aplicaciones',
     'card.capas.h3':'Fundas industriales a medida',
     'card.capas.p':'Fundas para máquinas, equipos y áreas productivas que exigen protección, resistencia y acabado técnico.',
-    'card.capas.hint':'+ Ver ma…3496 tokens truncated…cinas, garagens e áreas externas.',
-    'card.shadesail.hint':'+ Ver tamanhos e modelos',
-    'card.telashade.h3':'Tela Shade 90% Sombreamento',
-    'card.telashade.p':'Polietileno UV antifúngico com 90% de sombreamento e circulação de ar. +80 tamanhos, kit de instalação incluso.',
-    'card.telashade.hint':'+ Ver tamanhos e especificações',
+    'card.capas.hint':'+ Ver ma…3570 tokens truncated…ard.telashade.hint':'+ Ver tamanhos e especificações',
     'card.cabo_aco.h3':'Cabo de Aço revestido e galvanizado',
     'card.cabo_aco.p':'Cabos PVC coloridos e galvanizados para polias, segurança e estruturas. 1,6 mm a 6 mm, até 600 kg.',
     'card.cabo_aco.hint':'+ Ver diâmetros e acessórios',
@@ -1419,7 +1415,7 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModa
     var button = form.querySelector('button[type="submit"]');
     button.disabled = false; button.textContent = 'Enviar mensaje';
     if (data.ok) {
-      status.className = 'form-status success'; status.textContent = 'Mensaje enviado. Gracias por contactarnos.';
+      status.className = 'form-status success'; status.textContent = contactSuccessMessage();
       var interest = form.dataset.submittedInterest || '';
       form.reset();
       if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contacto_cikala_es', site:'cikala.es', interest:interest});
@@ -1429,12 +1425,20 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModa
   });
 })();
 
+function contactSuccessMessage() {
+  var messages = {
+    es: 'Gracias por enviar su mensaje. En breve me pondré en contacto.',
+    pt: 'Obrigado por enviar sua mensagem. Em breve entrarei em contato.',
+    en: 'Thank you for your message. I will get in touch shortly.'
+  };
+  return messages[document.documentElement.lang] || messages.es;
+}
+
 (function() {
   var stored = null;
   try { stored = localStorage.getItem('cikala-lang'); } catch(e) {}
-  if (stored === 'pt') stored = null;
   var nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase().slice(0,2);
-  var detected = ({'es':'es','en':'en'})[nav] || 'es';
+  var detected = ({'pt':'pt','es':'es','en':'en'})[nav] || 'es';
   setLang(stored || detected);
 })();
 </script>
