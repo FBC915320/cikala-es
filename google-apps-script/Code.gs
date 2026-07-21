@@ -47,7 +47,7 @@ function processSubmission_(data) {
   }
   sheet.appendRow([new Date(), site, name, company, country, email, interest, message]);
 
-  var subject = site === 'cikala.es' ? 'Contato www.cicala.es' : 'Novo contato pelo site Fabiano Cicala';
+  var subject = site === 'cikala.es' ? 'Contato www.cikala.es' : 'Novo contato pelo site Fabiano Cicala';
   MailApp.sendEmail({
     to: adminEmail,
     subject: subject,
