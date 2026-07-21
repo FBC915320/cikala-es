@@ -1615,6 +1615,27 @@ function contactSuccessMessage() {
   var nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase().slice(0,2);
   var detected = ({'pt':'pt','es':'es','en':'en'})[nav] || 'es';
   setLang(stored || detected);
+
+  // Approximate location is used only to choose the initial language. No IP or
+  // location data is stored or sent with the contact form.
+  if (stored || !window.fetch) return;
+  window.addEventListener('load', function() {
+    window.setTimeout(function() {
+      fetch('https://ipapi.co/json/')
+        .then(function(response) { return response.ok ? response.json() : null; })
+        .then(function(location) {
+          if (!location || !location.country_code) return;
+          var country = String(location.country_code).toUpperCase();
+          var spanish = ['AR','BO','CL','CO','CR','CU','DO','EC','ES','GQ','GT','HN','MX','NI','PA','PE','PR','PY','SV','UY','VE'];
+          var portuguese = ['AO','BR','CV','GW','MZ','PT','ST','TL'];
+          var language = portuguese.indexOf(country) !== -1 ? 'pt' : (spanish.indexOf(country) !== -1 ? 'es' : 'en');
+          document.documentElement.dataset.country = country;
+          document.documentElement.dataset.region = location.region || '';
+          setLang(language);
+        })
+        .catch(function() {});
+    }, 0);
+  });
 })();
 </script>
 </body>
