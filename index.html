@@ -1558,6 +1558,7 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModa
     status.className = 'form-status success'; status.textContent = contactSuccessMessage();
     var interest = form.dataset.submittedInterest || '';
     form.reset();
+    if (typeof window.cikalaAnalyticsTrack === 'function') window.cikalaAnalyticsTrack('form_submit', {form_name:'contacto_cikala_es', site:'cikala.es', interest:interest});
     if (typeof gtag === 'function') gtag('event', 'generate_lead', {form_name:'contacto_cikala_es', site:'cikala.es', interest:interest});
   }
   if (responseFrame) responseFrame.addEventListener('load', function() {
@@ -1634,6 +1635,50 @@ function contactSuccessMessage() {
         })
         .catch(function() {});
   }, 0);
+})();
+
+(function() {
+  function track(eventName, parameters) {
+    if (typeof gtag === 'function') gtag('event', eventName, parameters || {});
+  }
+  window.cikalaAnalyticsTrack = track;
+  var site = 'cikala.es';
+  var contact = document.getElementById('contato');
+  var form = document.getElementById('contact-form');
+  var contactViewed = false;
+  var formStarted = false;
+  var milestones = {};
+  function trackContactView() {
+    if (contactViewed) return;
+    contactViewed = true;
+    track('view_contact_form', {form_name:'contacto_cikala_es', site:site});
+  }
+  if (contact && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries, observer) {
+      if (entries[0] && entries[0].isIntersecting) { trackContactView(); observer.disconnect(); }
+    }, {threshold:0.35}).observe(contact);
+  }
+  if (form) form.addEventListener('focusin', function() {
+    if (formStarted) return;
+    formStarted = true;
+    track('form_start', {form_name:'contacto_cikala_es', site:site});
+  });
+  document.addEventListener('click', function(event) {
+    var target = event.target.closest && event.target.closest('a[href="#contato"]');
+    if (target) track('contact_cta_click', {site:site, location:target.className || 'link'});
+  });
+  function trackScrollDepth() {
+    var height = document.documentElement.scrollHeight - window.innerHeight;
+    if (height <= 0) return;
+    var depth = Math.round((window.scrollY / height) * 100);
+    [25,50,75,90].forEach(function(milestone) {
+      if (depth >= milestone && !milestones[milestone]) {
+        milestones[milestone] = true;
+        track('scroll_depth', {site:site, percent_scrolled:milestone});
+      }
+    });
+  }
+  window.addEventListener('scroll', trackScrollDepth, {passive:true});
 })();
 </script>
 </body>
